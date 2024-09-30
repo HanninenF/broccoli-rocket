@@ -1,63 +1,58 @@
-// state = all den data som appen har lagrat utifrån vad användaren gör
-// state innheåller också vår config eller "start-värden"
+//skriv state
+const state={
+  shop:
+  [
+    {
+      item: 'Brocoli',
+      amount: 12,
+    },
+    {
+      item: 'Tomat',
+      amount: 3,
+    }
+  ]
+}
 
-const state = {
-	shop: [
-		{ vegetable: "Broccoli", amount: 12, color: "green" },
-		{ vegetable: "Potato", amount: 25, color: "brown" },
-		{ vegetable: "Onion", amount: 8 },
-	],
-	order: [],
-	addVegetable: function (vegetable, amount) {
-		// add vegetable
-		this.shop.push({ vegetable, amount });
-	},
-};
 
-// console.log(state.shop[1].amount);
-// console.log(state.shop[0].color);
 
-// document.querySelector(".shop").innerHTML = state.shop[1].amount;
+  //                     inparameter1 och 2
 
-// dynamiskt bygga GUI med conditional rendering med ternary operator
-// render = ändrar / visa upp "nya" GUI
+    //add Vegetable
+    //pekar på state och refererar till shop. pushar parametrarna till ett nytt objekt i arrayen shop
 
-const renderShop = () => {
-	// tömma shop-diven först!
-	const shopDiv = document.querySelector(".shop");
-	shopDiv.innerHTML = "";
 
-	for (const v of state.shop) {
-		// skapa ny div-tag
-		const vegetable = document.createElement("div");
+/* skriv ut menyn: */
 
-		// lägg till text i div-taggen, ta text ifrån state
-		vegetable.innerHTML = `${v.vegetable} (amount: ${v.amount})${
-			v.color === undefined ? "" : ", " + v.color
-		}`;
 
-		// lägg till nya div-taggen i DOMen
-		shopDiv.appendChild(vegetable);
-	}
-};
+  //tömma shop-diven först!
 
-// här kommer appen:
 
-state.addVegetable("Cucumber", 34);
-renderShop();
+  /*   Första iterationen:
+v blir ett objekt. Alltså följande: { vegetable: "Broccoli", amount: 12, color: "green" }
+Andra iterationen:
+v blir { vegetable: "Potato", amount: 25, color: "brown" }
+Tredje iterationen:
+v blir { vegetable: "Onion", amount: 8 } */
 
-document.querySelector(".add-vegetable").addEventListener("click", (e) => {
-	e.preventDefault();
+  // Använd forEach för att loopa genom state.shop
 
-	//console.log(document.querySelector("#vegetable").value);
-	//console.log(document.querySelector("#amount").value);
+    // Skapa ny div-tag
 
-	state.addVegetable(
-		document.querySelector("#vegetable").value,
-		document.querySelector("#amount").value
-	);
 
-	//console.log(state);
+    // Lägg till text i div-taggen, ta text ifrån state
 
-	renderShop();
-});
+
+    // Lägg till nya div-taggen i DOMen
+
+
+//här kommer appen:
+/* state.egenskap(grönsak, antal) */
+
+
+//skapa eventlistener på knappen
+
+
+  //state.addVeg inmatningsfälten
+
+
+  //render vegs
